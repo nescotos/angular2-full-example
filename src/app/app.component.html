@@ -1,3 +1,22 @@
 <h1>
   {{title}}
 </h1>
+<input [(ngModel)]="myText"type="text" placeholder="Type a message!"/>
+{{myText}}<br>
+<input type="text" #textBox placeholder="Type a message!"/>
+<button (click)="showAlert(textBox.value)" >Click Me! </button>
+<form>
+  <input type="text" #textName placeholder="Type a name!"/>
+  <input type="text" #textBreed placeholder="Type a breed!"/>
+  <button (click)="createDog(textName.value, textBreed.value)" >Save Dog</button>
+</form>
+<ul *ngFor="let dog of dogs">
+  <li>{{dog['name']}}</li>
+</ul>
+
+<a [routerLink]="['/other']">Go to Other</a><br>
+<button (click)="goToOther()" >Go to other </button>
+
+<router-outlet></router-outlet>
+
+<!-- <app-math></app-math> -->
